@@ -1,0 +1,619 @@
+/* Підключення Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Great+Vibes&display=swap'); /* Підключає шрифти Roboto та Great Vibes */
+
+/* Базові стилі */
+body {
+  font-family: 'Roboto', sans-serif; /* Встановлює основний шрифт сторінки */
+  margin: 0; /* Відсутність зовнішніх відступів */
+  padding: 0; /* Відсутність внутрішніх відступів */
+  box-sizing: border-box; /* Враховує відступи у ширині елементів */
+  background-color: #f4f4f9; /* Колір фону сторінки */
+  color: #333; /* Основний колір тексту */
+  font-size: 1rem; /* Базовий розмір шрифту */
+}
+
+header {
+  background: linear-gradient(90deg, #3699e1, #3699e1); /* Градієнтний фон заголовка */
+  color: #fff; /* Білий колір тексту */
+  padding: 10px 30px; /* Внутрішні відступи */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь під заголовком */
+}
+
+.header-layout {
+  display: flex; /* Використовує Flexbox для розташування елементів */
+  align-items: center; /* Вирівнює елементи по вертикалі */
+  justify-content: space-between; /* Розташовує елементи зліва, по центру і справа */
+  padding: 0; /* Нульові внутрішні відступи */
+  flex-wrap: wrap; /* Дозволяє перенесення елементів на новий рядок */
+}
+
+.logo-image img {
+  height: 150px; /* Висота картинки логотипу */
+  width: auto; /* Автоматична ширина для збереження пропорцій */
+}
+
+.logo-text {
+  flex: 4; /* Пропорційна ширина тексту логотипу */
+  text-align: center; /* Центрування тексту логотипу */
+  font-size: clamp(2rem, 6vw, 6rem); /* Адаптивний розмір шрифту */
+  font-weight: normal; /* Нормальна жирність тексту */
+  color: #fff; /* Білий колір тексту */
+  font-family: 'Great Vibes', cursive; /* Шрифт логотипу */
+  line-height: 1; /* Висота рядка */
+}
+
+/* Контактна інформація в хедері */
+.contact-info {
+  display: flex;
+  flex-direction: column; /* Розташування елементів вертикально */
+  align-items: center; /* Вирівнювання тексту та іконок по центру */
+  gap: 10px; /* Відступ між рядками */
+  text-align: center; /* Центрування тексту */
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center; /* Вирівнювання тексту та іконок по вертикалі */
+  gap: 10px; /* Відступ між іконкою та текстом */
+  font-size: 1rem; /* Розмір тексту */
+}
+
+.contact-info a {
+  text-decoration: none; /* Прибирає підкреслення у посиланнях */
+  color: #ffffff; /* Колір тексту посилання */
+}
+
+.contact-info a:hover {
+  color: #005A9C; /* Колір тексту при наведенні */
+}
+
+.contact-icon {
+  width: 24px; /* Ширина іконки */
+  height: 24px; /* Висота іконки */
+}
+
+nav {
+  margin-top: 15px; /* Верхній відступ для навігації */
+  text-align: center; /* Центрування тексту навігації */
+}
+
+nav a {
+  color: #fff; /* Білий колір тексту посилань */
+  text-decoration: none; /* Відсутність підкреслення тексту */
+  margin: 0 15px; /* Відступи між посиланнями */
+  font-size: 1.1rem; /* Розмір шрифту посилань */
+  transition: color 0.3s ease; /* Плавний ефект зміни кольору при наведенні */
+}
+
+nav a:hover {
+  color: #ffdd57; /* Жовтий колір тексту при наведенні */
+}
+
+section {
+  padding: 20px; /* Внутрішні відступи секції */
+  margin: 20px auto; /* Центрування секції з відступами */
+  max-width: 1200px; /* Максимальна ширина секції */
+  background: #fff; /* Білий фон секції */
+  border-radius: 10px; /* Закруглені кути секції */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь секції */
+  text-align: center; /* Центрування тексту секції */
+}
+
+section h2 {
+  margin: 0 0 20px; /* Нижній відступ заголовка секції */
+  font-size: 2rem; /* Розмір шрифту заголовка */
+  color: #3699e1; /* Синій колір заголовка */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.slider, .google-reviews {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  position: relative;
+  max-width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Кнопки навігації */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.slider-btn.prev {
+  left: 10px;
+}
+
+.slider-btn.next {
+  right: 10px;
+}
+
+.slides img, .google-reviews iframe {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.google-reviews iframe {
+  height: 400px;
+}
+
+#contacts {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contacts-layout {
+  display: flex;
+  flex-direction: column; /* Розташування елементів вертикально */
+  gap: 20px; /* Відступ між рядками */
+  align-items: center; /* Вирівнювання тексту по центру */
+  text-align: center; /* Центрування тексту */
+}
+
+/* Рядок контактів */
+.contact-row {
+  display: flex;
+  gap: 15px; /* Відступ між елементами в рядку */
+  flex-wrap: wrap; /* Дозволяє переносити елементи на новий рядок */
+  justify-content: center; /* Вирівнювання елементів по центру */
+}
+
+/* Стилі для контактів */
+.contact-row p {
+  display: flex;
+  align-items: center; /* Вирівнювання тексту та іконок по вертикалі */
+  gap: 10px; /* Відступ між іконкою та текстом */
+  font-size: 1.5rem; /* Розмір тексту */
+}
+
+.contact-row a {
+  text-decoration: none; /* Прибирає підкреслення у посиланнях */
+  color: #3699e1; /* Колір тексту посилання */
+}
+
+.contact-row a:hover {
+  color: #005A9C; /* Колір тексту при наведенні */
+}
+
+/* Стилі для іконок */
+.contact-icon {
+  width: 24px; /* Ширина іконки */
+  height: 24px; /* Висота іконки */
+}
+
+form {
+  flex: 1;
+  max-width: 300px; /* Зменшено ширину форми */
+  background: #f9f9f9;
+  padding: 10px; /* Зменшено внутрішні відступи */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem; /* Зменшено розмір тексту */
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px; /* Зменшено внутрішні відступи */
+  margin-bottom: 8px; /* Зменшено відступи між елементами */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem; /* Зменшено розмір шрифту */
+}
+
+form textarea {
+  height: 50px; /* Зменшено висоту текстового поля */
+  resize: none;
+}
+
+form button {
+  background-color: #3699e1;
+  color: #fff;
+  border: none;
+  padding: 8px 12px; /* Зменшено розмір кнопки */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem; /* Зменшено розмір тексту кнопки */
+}
+
+form button:hover {
+  background-color: #005A9C;
+}
+
+/* Загальний стиль для секції "Послуги" */
+.services-layout {
+  display: flex;
+  gap: 20px; /* Відступ між блоками */
+  flex-wrap: wrap; /* Дозволяє переносити блоки на новий рядок */
+  justify-content: space-between; /* Розташування блоків */
+}
+
+/* Стиль для кожного блоку */
+.services-block {
+  flex: 1; /* Рівномірний розподіл ширини між блоками */
+  min-width: 300px; /* Мінімальна ширина блоку */
+  background-color: #f9f9f9;
+  padding: 10px; /* Зменшено внутрішні відступи блоку */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Центрування тексту */
+}
+
+/* Заголовок блоку */
+.block-title {
+  font-size: 1.5rem;
+  color: #3699e1;
+  margin-bottom: 10px; /* Зменшено нижній відступ заголовка */
+  display: flex;
+  align-items: center; /* Вирівнювання заголовка та картинки по вертикалі */
+  justify-content: center; /* Вирівнювання по горизонталі */
+  gap: 5px; /* Зменшено відступ між картинкою та текстом */
+  margin-top: 5px; 
+}
+
+/* Стиль для картинок у заголовках */
+.block-title img {
+  width: 30px; /* Ширина картинки */
+  height: 30px; /* Висота картинки */
+}
+
+.services-layout, .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.column, .grid div {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn {
+  width: 100%;
+  background-color: #3699e1;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.toggle-btn:hover {
+  background-color: #005A9C;
+}
+
+.toggle-content {
+  display: none; /* Ховає контент за замовчуванням */
+  padding: 10px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  text-align: center; /* Центрування тексту */
+  position: relative; /* Для позиціонування хрестика */
+}
+
+/* Заголовок "Зв'яжіться з нами" */
+.feedback-title {
+  font-size: 1rem;
+  color: #3699e1;
+  margin-bottom: 15px;
+}
+
+/* Кнопка закриття */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #000000;
+}
+
+.close-btn:hover {
+  color: #005A9C;
+}
+
+/* Кнопки варіантів зв'язку */
+.option-btn {
+  display: block;
+  width: 100%;
+  background-color: #3699e1;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  padding: 10px 0px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.option-btn:hover {
+  background-color: #005A9C;
+}
+
+/* Стилі для форми */
+#contact-form {
+  display: none; /* Ховає форму за замовчуванням */
+  margin-top: 15px;
+}
+
+form {
+  max-width: 300px; /* Зменшено ширину форми */
+  margin: 0 auto;
+  padding: 10px; /* Зменшено внутрішні відступи */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: -25px;
+  font-size: 0.9rem; /* Зменшено розмір тексту */
+}
+
+form input,
+form textarea {
+  width: 90%;
+  padding: 8px; /* Зменшено внутрішні відступи */
+  margin-bottom: 8px; /* Зменшено відступи між елементами */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem; /* Зменшено розмір шрифту */
+}
+
+form textarea {
+  height: 50px; /* Зменшено висоту текстового поля */
+  resize: none;
+}
+
+form button {
+  background-color: #3699e1;
+  color: #fff;
+  border: none;
+  padding: 8px 12px; /* Зменшено розмір кнопки */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem; /* Зменшено розмір тексту кнопки */
+}
+
+form button:hover {
+  background-color: #005A9C;
+}
+
+footer {
+  background: #3699e1; /* Фон футера */
+  color: #fff; /* Білий колір тексту футера */
+  text-align: center; /* Центрування тексту футера */
+  padding: 15px; /* Внутрішні відступи футера */
+  font-size: 0.9rem; /* Розмір шрифту футера */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Тінь над футером */
+}
+
+/* Стилі для заголовків секцій */
+.section-title {
+  display: flex; /* Використовуємо Flexbox для розташування тексту та іконки */
+  align-items: center; /* Вирівнюємо елементи по вертикалі */
+  justify-content: center; /* Центруємо заголовок */
+  font-size: 2rem; /* Розмір шрифту заголовка */
+  color: #fff; /* Білий колір тексту */
+  background: linear-gradient(90deg, #0073C4, #005A9C); /* Синя стрічка */
+  padding: 10px 20px; /* Внутрішні відступи */
+  width: 20%; /* Змінено ширину стрічки на 80% від контейнера */
+  border-radius: 30px; /* Закруглені кути стрічки */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь для стрічки */
+  margin: 5px auto 20px; /* Центрування стрічки */
+}
+
+.title-icon {
+  order: 1; /* Переміщує іконку праворуч від тексту */
+  margin-left: 10px; /* Відступ між текстом і іконкою */
+}
+
+.title-icon img {
+  width: 40px; /* Ширина іконки */
+  height: auto; /* Автоматична висота для збереження пропорцій */
+}
+
+/* Стилі для карток лікарів */
+.doctor-card {
+  border: 1px solid #ddd; /* Рамка картки */
+  padding: 15px; /* Внутрішні відступи */
+  border-radius: 10px; /* Закруглені кути */
+  text-align: center; /* Центрування тексту */
+  margin-bottom: 20px; /* Відступ між картками */
+}
+
+.toggle-content {
+  display: none; /* Ховає детальну інформацію за замовчуванням */
+  margin-top: 10px; /* Відступ зверху */
+}
+
+.toggle-btn {
+  background-color: #3699e1; /* Синій фон кнопки */
+  color: #fff; /* Білий текст кнопки */
+  border: none; /* Відсутність рамки */
+  padding: 8px 15px; /* Внутрішні відступи кнопки */
+  border-radius: 5px; /* Закруглені кути кнопки */
+  cursor: pointer; /* Змінює курсор на "руку" */
+}
+
+.toggle-btn:hover {
+  background-color: #005A9C; /* Темніший синій фон при наведенні */
+}
+
+/* Стилі для віджета */
+.feedback-widget {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.feedback-widget .toggle-btn {
+  background-color: #f9f9f9;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50px; /* Закруглені кути */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Відступ між іконкою та текстом */
+}
+
+.feedback-widget .toggle-btn:hover {
+  background-color: #005A9C;
+}
+
+.feedback-widget .feedback-icon {
+  width: 44px; /* Ширина іконки */
+  height: 44px; /* Висота іконки */
+  border-radius: 50px;
+}
+
+.feedback-widget #feedback-text {
+  font-size: 1rem; /* Розмір тексту */
+}
+
+@media (max-width: 768px) {
+  .header-layout {
+    flex-direction: column; /* Вертикальне розташування елементів */
+    align-items: center; /* Центрування елементів */
+    gap: 10px; /* Відступи між блоками */
+  }
+  .logo-image img {
+    height: 120px; /* Зменшення висоти картинки логотипу */
+  }
+  .logo-text {
+    font-size: 2.5rem; /* Зменшення розміру тексту логотипу */
+  }
+  nav a {
+    display: block; /* Посилання в меню стають вертикальними */
+    margin: 10px 0; /* Відступи між посиланнями */
+    font-size: 1rem; /* Зменшення розміру шрифту посилань */
+  }
+  .google-reviews iframe {
+    height: 250px;
+  }
+
+  .section-title {
+    width: 90%; /* Ширина стрічки на мобільних пристроях */
+    font-size: 1.5rem; /* Зменшення розміру шрифту заголовка */
+    padding: 8px 15px; /* Зменшення внутрішніх відступів */
+  }
+
+  .slider {
+    max-width: 100%;
+  }
+
+  .slides img {
+    height: auto;
+  }
+
+  .slider-btn {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image img {
+    height: 100px; /* Ще менша висота картинки логотипу */
+  }
+
+  .section-title {
+    font-size: 1.2rem; /* Ще менший розмір шрифту заголовка */
+    padding: 6px 10px; /* Мінімальні внутрішні відступи */
+  }
+
+  .logo-text {
+    font-size: 2rem; /* Ще менший розмір тексту логотипу */
+  }
+  nav a {
+    font-size: 0.9rem; /* Ще менший розмір тексту посилань */
+  }
+  footer {
+    font-size: 0.7rem; /* Ще менший розмір тексту футера */
+    padding: 8px; /* Мінімальні внутрішні відступи футера */
+  }
+  .slider {
+    max-width: 100%;
+  }
+
+  .slides img {
+    height: auto;
+  }
+
+  .slider-btn {
+    padding: 8px;
+  }
+}
