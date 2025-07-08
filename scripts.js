@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeFeedback = document.getElementById('close-feedback');
   const contactFormBtn = document.getElementById('contact-form-btn');
   const contactForm = document.getElementById('contact-form');
+  const form = document.querySelector("#contact-form form");
 
   // Кнопки "Детальніше" і "Послуги"
   toggleButtons.forEach(button => {
@@ -81,4 +82,35 @@ document.addEventListener('DOMContentLoaded', () => {
   contactFormBtn.addEventListener('click', () => {
     contactForm.style.display = contactForm.style.display === 'block' ? 'none' : 'block';
   });
+});
+
+
+// Работа форми на відправку і очищення та обробка помилок
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      // Запобігаємо стандартній поведінці форми
+      event.preventDefault();
+
+      // Відправляємо форму через AJAX
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Ваше повідомлення успішно відправлено!");
+            form.reset(); // Очищуємо форму
+          } else {
+            alert("Сталася помилка. Спробуйте ще раз.");
+          }
+        })
+        .catch(() => {
+          alert("Сталася помилка. Спробуйте ще раз.");
+        });
+    });
+  }
 });
