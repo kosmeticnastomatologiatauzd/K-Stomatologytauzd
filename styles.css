@@ -40,6 +40,7 @@ header {
   color: #fff; /* Білий колір тексту */
   font-family: 'Great Vibes', cursive; /* Шрифт логотипу */
   line-height: 1; /* Висота рядка */
+  margin: 10px;
 }
 
 /* Контактна інформація в хедері */
