@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
   contactFormBtn.addEventListener('click', () => {
     contactForm.style.display = contactForm.style.display === 'block' ? 'none' : 'block';
   });
-});
 
 
 // Работа форми на відправку і очищення та обробка помилок
