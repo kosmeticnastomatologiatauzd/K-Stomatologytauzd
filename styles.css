@@ -56,6 +56,7 @@ header {
   align-items: center; /* Вирівнювання тексту та іконок по вертикалі */
   gap: 10px; /* Відступ між іконкою та текстом */
   font-size: 1rem; /* Розмір тексту */
+  margin: 5px;
 }
 
 .contact-info a {
