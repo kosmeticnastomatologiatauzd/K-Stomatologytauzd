@@ -47,7 +47,7 @@ header {
   display: flex;
   flex-direction: column; /* Розташування елементів вертикально */
   align-items: center; /* Вирівнювання тексту та іконок по центру */
-  gap: 10px; /* Відступ між рядками */
+  gap: 5px; /* Відступ між рядками */
   text-align: center; /* Центрування тексту */
 }
 
