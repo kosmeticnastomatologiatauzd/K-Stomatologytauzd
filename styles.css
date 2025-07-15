@@ -144,9 +144,11 @@ ul li {
 }
 
 .slides img {
-  width: 100%;
-  flex-shrink: 0;
-  object-fit: cover;
+  max-width: 100%; /* Зменшує ширину зображення до 80% від контейнера */
+  max-height: 900px;  /* Максимальна висота зображення */
+  flex-shrink: 0; /* Запобігає зменшенню зображення */
+  object-fit: cover;  /* Зберігає пропорції зображення */
+  margin: 0 auto;  /* Центрує зображення */
 }
 
 /* Кнопки навігації */
@@ -492,6 +494,16 @@ footer {
   margin-bottom: 20px; /* Відступ між картками */
 }
 
+.doctor-card img {
+  border-radius: 10px; /* Закруглені кути */
+  margin-bottom: 20px; /* Відступ між картками */
+  width: 150px; /* Фіксована ширина для всіх фото */
+  height: 150px; /* Фіксована висота для всіх фото */
+  object-fit: cover; /* Обрізає зображення, щоб воно заповнювало контейнер */
+  display: block; /* Забезпечує коректне вирівнювання */
+  margin: 0 auto; /* Центрує зображення в контейнері */
+}
+
 .toggle-content {
   display: none; /* Ховає детальну інформацію за замовчуванням */
   margin-top: 10px; /* Відступ зверху */
@@ -585,6 +597,11 @@ footer {
   .slider-btn {
     padding: 8px;
   }
+  
+  .doctor-card img {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -617,5 +634,10 @@ footer {
 
   .slider-btn {
     padding: 8px;
+  }
+    
+  .doctor-card img {
+    width: 100px;
+    height: 100px;
   }
 }
