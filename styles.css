@@ -97,7 +97,7 @@ section {
   max-width: 1200px; /* Максимальна ширина секції */
   background: #fff; /* Білий фон секції */
   border-radius: 10px; /* Закруглені кути секції */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь секції */
+  box-shadow: 0 4px 6px rgb(54 153 225); /* Тінь секції */
   text-align: center; /* Центрування тексту секції */
 }
 
@@ -113,10 +113,26 @@ ul {
 }
 
 ul li {
-  margin: 10px 0;
+  margin: 0 0;
   font-size: 1.1rem;
-  color: #555;
+  color: #373737;
 }
+
+.services-layout ul li {
+  margin: 5px; /* Відступи між елементами */
+  padding: 5px; /* Внутрішні відступи */
+  border-radius: 5px; /* Закруглені кути */
+  background-color: #f9f9f9; /* Світлий фон */
+}
+
+.services-layout ul li ul li {
+  margin: 5px 0; /* Відступи між внутрішніми елементами */
+  padding: 5px 10px; /* Внутрішні відступи */
+  border: 1px dashed #3699e1; /* Пунктирна рамка */
+  border-radius: 3px; /* Закруглені кути */
+  background-color: #f4f4f9; /* Світлий фон */
+}
+
 
 .slider, .google-reviews {
   position: relative;
