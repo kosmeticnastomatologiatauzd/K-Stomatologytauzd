@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactFormBtn = document.getElementById('contact-form-btn');
   const contactForm = document.getElementById('contact-form');
   const form = document.querySelector("#contact-form form");
+  const tableBody = document.querySelector(".services-table tbody");
 
   // Кнопки "Детальніше" і "Послуги"
   toggleButtons.forEach(button => {
@@ -84,32 +85,63 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-// Работа форми на відправку і очищення та обробка помилок
-  if (form) {
-    form.addEventListener("submit", function (event) {
-      // Запобігаємо стандартній поведінці форми
-      event.preventDefault();
+  // Работа форми на відправку і очищення та обробка помилок
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        // Запобігаємо стандартній поведінці форми
+        event.preventDefault();
 
-      // Відправляємо форму через AJAX
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      })
-        .then((response) => {
-          if (response.ok) {
-            alert("Ваше повідомлення успішно відправлено!");
-            form.reset(); // Очищуємо форму
-          } else {
-            alert("Сталася помилка. Спробуйте ще раз.");
-          }
+        // Відправляємо форму через AJAX
+        const formData = new FormData(form);
+        fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
         })
-        .catch(() => {
-          alert("Сталася помилка. Спробуйте ще раз.");
+          .then((response) => {
+            if (response.ok) {
+              alert("Ваше повідомлення успішно відправлено!");
+              form.reset(); // Очищуємо форму
+            } else {
+              alert("Сталася помилка. Спробуйте ще раз.");
+            }
+          })
+          .catch(() => {
+            alert("Сталася помилка. Спробуйте ще раз.");
+          });
+      });
+    }
+
+    // Завантаження даних із JSON-файлу
+    fetch("./services.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        data.forEach((item) => {
+          if (item.type === "header") {
+            // Додати заголовок
+            const headerRow = document.createElement("tr");
+            headerRow.innerHTML = `
+              <td colspan="3" class="service-header">${item.name}</td>
+            `;
+            tableBody.appendChild(headerRow);
+          } else {
+            // Додати послугу
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${item.id}</td>
+              <td>${item.name}</td>
+              <td>${item.price}</td>
+            `;
+            tableBody.appendChild(row);
+          }
         });
-    });
-  }
+      })
+      .catch((error) => console.error("Помилка завантаження даних:", error));
 });
